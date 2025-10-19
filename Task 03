@@ -1,0 +1,24 @@
+Write a Python class to implement pow(x, n). Do not use built-in math.pow() function for this code. Also handle this code for all +ve as well as -ve numbers.
+
+
+
+class Power:
+    def pow(self, x, n):
+        if n == 0:
+            return 1
+        elif n > 0:
+            result = 1
+            for _ in range(n):
+                result *= x
+            return result
+        else:  # handle negative power
+            result = 1
+            for _ in range(-n):
+                result *= x
+            return 1 / result
+
+
+x = float(input("Enter base (x): "))
+n = int(input("Enter power (n): "))
+p = Power()
+print(f"{x} raised to power {n} is:", p.pow(x, n))
