@@ -1,0 +1,32 @@
+Employee Management: • Create a Person class with attributes/variables “name” and “age”.
+• Create a Job class with attributes/variables “designation” and “salary”. 
+• Create an Employee class that inherent the above both classes 
+• Implement a method to display employee details.
+
+
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Job:
+    def __init__(self, designation, salary):
+        self.designation = designation
+        self.salary = salary
+
+
+class Employee(Person, Job):
+    def __init__(self, name, age, designation, salary):
+        Person.__init__(self, name, age)
+        Job.__init__(self, designation, salary)
+
+    def display_details(self):
+        print("Employee Details:")
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Designation: {self.designation}")
+        print(f"Salary: Rs.{self.salary}")
+
+emp1 = Employee("Nouman", 25, "Software Engineer", 85000)
+emp1.display_details()
